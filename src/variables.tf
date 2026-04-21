@@ -89,6 +89,8 @@ variable "vm_db_role" {
   type = string
 }
 
+# Задание 6
+
 variable "vms_resources" {
   type = map(object({
     cores         = number

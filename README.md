@@ -52,6 +52,7 @@
 ### Решение 2
 
 [main.tf](src/main.tf)
+
 [variables.tf](src/variables.tf)
 
 Результат замены хардкода на переменные:
@@ -70,6 +71,7 @@
 ### Решение 3
 
 [main.tf](src/main.tf)
+
 [vms_platform.tf](src/vms_platform.tf)
 
 Создана ВМ netology-develop-platform-db в зоне доступности  ru-central1-b, использованы отдельные переменные:
@@ -153,8 +155,11 @@ metadata = {
 
 ### Решение 6
 
-[text](src/variables.tf)
-[text](src/main.tf)
+[variables.tf](src/variables.tf)
+
+[main.tf](src/main.tf)
+
+В variables.tf добавлены новые переменные (отмечены комментарием). Ненужные переменные в проекте закомментированы.
 
 Проверка terraform plan:
 
@@ -241,7 +246,7 @@ Apply прошел без ошибок.
 
 Выражение для Terraform console:
 
-var.test[0]["dev1"][0]
+```var.test[0]["dev1"][0]```
 
 Результат:
 
@@ -254,7 +259,7 @@ var.test[0]["dev1"][0]
 
 ### Решение 9
 
-Для описания nat gatevay создан отдельный файл [nat.tf](src/nat.tf). в [main.tf](src/main.tf) добавлены по строке таблицы маршрутизации в каждую подсеть (есть комментарии), а также в каждой ВМ выставлено значение nat = false.
+Для описания nat gateway создан отдельный файл [nat.tf](src/nat.tf). В [main.tf](src/main.tf) добавлены по строке таблицы маршрутизации в каждую подсеть (есть комментарии), а также в каждой ВМ выставлено значение nat = false.
 
 Проверяем отсутствие публичных IP:
 
